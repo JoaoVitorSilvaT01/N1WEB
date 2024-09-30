@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capas de Filmes</title>
+    <link rel="stylesheet" href="./estilo.css">
+    <script src="logica.js"></script>
+</head>
+    <body style="background-color: #0d1b2a;">
+    <header>
+        <h1>SINOPSES DISPONÍVEIS</h1>
+    </header>
+    <!--AQUI CADA DIV VAI REPRESENTAR UM FILME, E O MÉTODO ONCLICK PRESENTE NA IMAGEM LEVA ATÉ A OUTRA TELA-->
+    <div class="movie-grid">
+        <div class="movie">
+            <img src="./matrix.png" alt="Filme 1" onclick="goToMovie('filme1')">
+            <h2 >Matrix</h2>
+            <button class="heart-button" data-id="botao1" >&hearts;</button>
+        </div>
+        <div class="movie" >
+            <img src="./interestellar.jpg" alt="Filme 2" onclick="goToMovie('filme2')">
+            <h2>Interestellar                 </h2>
+            <button class="heart-button" data-id="botao2" >&hearts;</button>
+         </div>
+        <div class="movie">
+            <img src="./pulp.jpg" alt="Filme 3" onclick="goToMovie('filme3')">
+            <h2>Pulp Fiction</h2>
+            <button class="heart-button" data-id="botao3" >&hearts;</button>
+                </div>
+        <div class="movie">
+            <img src="./cdD.png" alt="Filme 1" onclick="goToMovie('filme4')">
+            <h2 >Cidade de Deus</h2>
+            <button class="heart-button" data-id="botao4" >&hearts;</button>
+                </div>
+        <div class="movie">
+            <img src="./orange.jpg" alt="Filme 1" onclick="goToMovie('filme5')">
+            <h2>Laranja mecânica</h2>
+            <button class="heart-button" data-id="botao5" >&hearts;</button>
+                </div>
+        <div class="movie">
+            <img src="./blade.jpg" alt="Filme 1" onclick="goToMovie('filme6')">
+            <h2>Blade Runner 2049 </h2>
+            <button class="heart-button" data-id="botao6" >&hearts;</button>
+                </div>
+        <div class="movie">
+            <img src="./batman.jpg" alt="Filme 1" onclick="goToMovie('filme7')">
+            <h2>Batman Begins</h2>
+            <button class="heart-button" data-id="botao7" >&hearts;</button>
+                </div>
+        <div class="movie">
+            <img src="./2001.jpg" alt="Filme 1" onclick="goToMovie('filme8')">
+            <h2 style="font-size: medium;">2001 Uma Odisséia no Espaço </h2>
+            <button class="heart-button" data-id="botao8" >&hearts;</button>
+        </div>
+    </div>
+    
+
+    
+    
+
+    
+
+
+    <script>
+    
+        const botoes = document.querySelectorAll(".heart-button");
+    
+    botoes.forEach((botao) => {
+        const botaoId = botao.getAttribute("data-id");
+        let estaClicado = localStorage.getItem(`estadoBotao-${botaoId}`) === "clicado";
+    
+        // DEFINE O ESTADO INICIAL DE CADA BOTÃO COM BASE NA MEMÓRIA LOCAL
+        botao.classList.toggle("clicked", estaClicado);
+    
+        // ADICIONA UM MÉTODO QUE FICA AGUARDANDO O BOTÃO SER CLICADO
+        botao.addEventListener("click", function() {
+            estaClicado = !estaClicado;
+            botao.classList.toggle("clicked", estaClicado);
+    
+            // O SET SALVA AS ALTERAÇÕES
+            localStorage.setItem(`estadoBotao-${botaoId}`, estaClicado ? "clicado" : "naoClicado");
+        });
+    });
+        </script>
+</body>
+</html>

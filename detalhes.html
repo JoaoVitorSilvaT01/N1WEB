@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Filme</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+<body style=" background-color: #71a2cc;">
+    <header>
+        <h1 id="movie-title">Título do Filme</h1>
+    </header>
+    <!-- ESSA PÁGINA FAZ A DISPOSIÇÃO DA TABELA E DOS DETALHES DO FILME SLECIONADO-->
+    <div class="movie-details">
+        <div class="imagemFime">
+        <img id="movie-poster" src="" alt="Pôster do Filme">
+        </div>
+        <div class="paragrafoSinop">
+            <p id="synopsis">Aqui vai a sinopse do filme selecionado.</p>
+        
+        <h2>Ranqueamento</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Critério</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enredo</td>
+                    <td id="story-rating"></td>
+                </tr>
+                <tr>
+                    <td>Fotografia</td>
+                    <td id="photography-rating"></td>
+                </tr>
+                <tr>
+                    <td>Atuação</td>
+                    <td id="acting-rating"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    
+
+    <script src="logica.js"></script>
+</body>
+</html>
